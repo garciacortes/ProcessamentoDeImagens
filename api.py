@@ -144,10 +144,20 @@ def menu(opc, dataUser, token=None):
         print(f"{filtro}")
 
       filtro = input("Digite o filtro desejado: ").lower()'''
-
+      
+      filtros = {
+        "Preto e Branco": "grayscale",
+        "Sepia": "sepia",
+        "Inverter Cores": "invert",
+        "Posterizar": "posterize",
+        "Solarizar": "solarize",
+        "Auto Contraste": "autocontrast",
+        "Equalizar": "equalize"
+      }
+      
       data = {
           "texto_base64": image_base64,
-          "filtro": dataUser["filtro"].lower()
+          "filtro": filtros[dataUser["filtro"]]
       }
 
       response = requestPost(url, data, getHeaders(token))
