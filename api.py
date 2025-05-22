@@ -59,7 +59,7 @@ def Imagens(response):
   if response.status_code == 200:
     # Exibir a resposta completa para depuração
     print("Resposta completa do webhook:", response.text)
-    try:
+    try:  
         # Extrair o JSON da resposta
         response_data = response.json()
 
@@ -113,7 +113,6 @@ def menu(opc, dataUser, token=None):
       }
 
       # Verificar se a requisição foi bem-sucedida
-      print(getHeaders())
       response = requestPost(url, data, getHeaders(token))
       return process_text(response)
       #print(" ")
