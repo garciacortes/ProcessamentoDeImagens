@@ -22,7 +22,7 @@ def widgets(opcao, textInputs = [], numberInputs = [], selectBox = []):
             st.stop()
         if imagem is not None:
             valores["imagem"] = imagem.read()
-        else:
+        elif imagem is not None:
             st.warning("Selecione Uma Imagem")
             st.stop()
         responseApi = menu(opcao, valores, st.session_state.token)
